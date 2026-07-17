@@ -18,7 +18,7 @@
 #define app_debug 1
 
 
-#define CONFIG_USER_OTA_UPDATE_ENBLE 1
+#define CONFIG_USER_OTA_UPDATE_ENBLE 0
 //音频测试宏定义
 #define CONFIG_AUDIO_VALUE_TEST_ENABLE 0
 
