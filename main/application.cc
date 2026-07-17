@@ -19,6 +19,8 @@
 
 #define TAG "Application"
 
+#include "user_app_config.h"
+
 
 Application::Application() {
     event_group_ = xEventGroupCreate();

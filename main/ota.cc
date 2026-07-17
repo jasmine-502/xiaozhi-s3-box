@@ -24,6 +24,7 @@
 
 #define TAG "Ota"
 
+#include "user_app_config.h"
 
 Ota::Ota() {
 #ifdef ESP_EFUSE_BLOCK_USR_DATA
@@ -211,6 +212,7 @@ esp_err_t Ota::CheckVersion() {
     }
 
     has_new_version_ = false;
+    #if CONFIG_USER_OTA_UPDATE_ENBLE
     cJSON *firmware = cJSON_GetObjectItem(root, "firmware");
     if (cJSON_IsObject(firmware)) {
         cJSON *version = cJSON_GetObjectItem(firmware, "version");
@@ -239,6 +241,7 @@ esp_err_t Ota::CheckVersion() {
     } else {
         ESP_LOGW(TAG, "No firmware section found!");
     }
+    #endif
 
     cJSON_Delete(root);
     return ESP_OK;

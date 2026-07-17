@@ -121,6 +121,7 @@ dependencies:
     version: ^0.3.1
     rules:
     - if: target in [esp32s3, esp32p4]
+  espressif/gmf_core: ^0.7.0
 
   ## Required IDF version
   idf:
